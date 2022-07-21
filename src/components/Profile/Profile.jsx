@@ -1,12 +1,12 @@
 
-import user from "../../components/user.json";
+import PropTypes from 'prop-types'
 
 import { Wrapper } from "./Profile.styled"
 
 import { Description } from "components/Profile/Description/Description"; 
 import { Info } from './ListInfo/ListInfo';
 
-export const Profile = () => {
+export const Profile = ({user}) => {
     return (
         <Wrapper>
   <Description
@@ -21,4 +21,8 @@ export const Profile = () => {
         />
         </Wrapper>
     )
+}
+
+Profile.prototype = {
+    user: PropTypes.objectOf(PropTypes.string),
 }

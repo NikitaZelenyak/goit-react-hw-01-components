@@ -1,7 +1,10 @@
  import { ItemStat } from "../ItemStat/ItemStat"
-import data from "../../../components/data.json"
- import { List } from "./StatList.styled"
-export const StatList = () => {
+
+import { List } from "./StatList.styled"
+ 
+import PropTypes from 'prop-types'
+
+export const StatList = ({data}) => {
    
     return (
         <List>
@@ -17,4 +20,11 @@ export const StatList = () => {
     )
         
 
+}
+
+
+StatList.prototype={
+    data: PropTypes.arrayOf(PropTypes.shape({
+        key:PropTypes.string.isRequired
+    })),
 }

@@ -1,8 +1,11 @@
 import { Table,OperationName } from "./TransactionHistory.styled"
 import { InfoTransactionItem } from "./InfoTransactionItem/InfoTransactionItem"
-import transactions from "../../components/transactions.json"
 
-export const TransactionHistory = () => {
+
+import PropTypes from 'prop-types'
+
+
+export const TransactionHistory = ({transactions}) => {
     return (
         <Table>
   <OperationName>
@@ -30,4 +33,10 @@ export const TransactionHistory = () => {
 
 </Table>
     )
+}
+
+TransactionHistory.propTypes = {
+    transactions: PropTypes.arrayOf(PropTypes.shape({
+          key: PropTypes.string.isRequired,
+      }))
 }
